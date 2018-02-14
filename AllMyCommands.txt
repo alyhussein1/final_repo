@@ -119,3 +119,35 @@ Fast-forward
  README.md | 8 ++++++++
  1 file changed, 8 insertions(+)
  create mode 100644 README.md
+
+User@Dell-PC MINGW64 ~/Desktop/Done (master)
+$ git add AllMyCommands.txt
+
+User@Dell-PC MINGW64 ~/Desktop/Done (master)
+$ git commit -m "added the all commands text file"
+[master fe80bb9] added the all commands text file
+ 1 file changed, 121 insertions(+)
+ create mode 100644 AllMyCommands.txt
+
+User@Dell-PC MINGW64 ~/Desktop/Done (master)
+$ git push -u origin master
+Counting objects: 6, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (6/6), done.
+Writing objects: 100% (6/6), 1.69 KiB | 1.69 MiB/s, done.
+Total 6 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas: 100% (1/1), done.
+To https://github.com/alyhussein1/final_repo.git
+   e147a22..fe80bb9  master -> master
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+
+User@Dell-PC MINGW64 ~/Desktop/Done (master)
+$ git checkout ReadMe
+Switched to branch 'ReadMe'
+
+User@Dell-PC MINGW64 ~/Desktop/Done (ReadMe)
+$ git push origin HEAD
+Total 0 (delta 0), reused 0 (delta 0)
+To https://github.com/alyhussein1/final_repo.git
+ * [new branch]      HEAD -> ReadMe
+
