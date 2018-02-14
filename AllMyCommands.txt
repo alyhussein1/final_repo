@@ -1,0 +1,121 @@
+
+User@Dell-PC MINGW64 ~/Desktop/Done
+$ git init
+Initialized empty Git repository in C:/Users/User/Desktop/Done/.git/
+
+User@Dell-PC MINGW64 ~/Desktop/Done (master)
+$ git add .
+
+User@Dell-PC MINGW64 ~/Desktop/Done (master)
+$ git commit -m "added 3 files"
+[master (root-commit) 28d261f] added 3 files
+ 3 files changed, 187 insertions(+)
+ create mode 100644 1.1.txt
+ create mode 100644 3.1.txt
+ create mode 100644 5.1.txt
+
+User@Dell-PC MINGW64 ~/Desktop/Done (master)
+$ git remote add origin https://github.com/alyhussein1/final_repo.git
+
+User@Dell-PC MINGW64 ~/Desktop/Done (master)
+$ git rm 3.1.txt
+rm '3.1.txt'
+
+User@Dell-PC MINGW64 ~/Desktop/Done (master)
+$ git commit -m "removed chapter 3.1"
+[master fd1a3c3] removed chapter 3.1
+ 1 file changed, 100 deletions(-)
+ delete mode 100644 3.1.txt
+
+User@Dell-PC MINGW64 ~/Desktop/Done (master)
+$ git log
+commit fd1a3c30264cb8a228fb776e01f798ec7aa8c2b7 (HEAD -> master)
+Author: aly hussein <alyh>
+Date:   Thu Feb 15 01:12:30 2018 +0200
+
+    removed chapter 3.1
+
+commit 28d261f45217ec1c3e57c2048f1f425593ca8357
+Author: aly hussein <alyh>
+Date:   Thu Feb 15 01:11:58 2018 +0200
+
+    added 3 files
+
+User@Dell-PC MINGW64 ~/Desktop/Done (master)
+$ git revert fd1a3c30264cb8a
+
+
+User@Dell-PC MINGW64 ~/Desktop/Done (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        new file:   3.1.txt
+
+
+User@Dell-PC MINGW64 ~/Desktop/Done (master)
+$ git commit -m "roll back on the deletion of the file"
+[master e147a22] roll back on the deletion of the file
+ 1 file changed, 100 insertions(+)
+ create mode 100644 3.1.txt
+
+User@Dell-PC MINGW64 ~/Desktop/Done (master)
+$ git push -u origin master
+Counting objects: 8, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (8/8), done.
+Writing objects: 100% (8/8), 8.23 KiB | 2.74 MiB/s, done.
+Total 8 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas: 100% (1/1), done.
+To https://github.com/alyhussein1/final_repo.git
+ * [new branch]      master -> master
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+
+User@Dell-PC MINGW64 ~/Desktop/Done (master)
+$ touch README.md
+
+User@Dell-PC MINGW64 ~/Desktop/Done (master)
+$ git commit -m "added README.md"
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Untracked files:
+        README.md
+
+nothing added to commit but untracked files present
+
+User@Dell-PC MINGW64 ~/Desktop/Done (master)
+$ git branch ReadMe
+
+User@Dell-PC MINGW64 ~/Desktop/Done (master)
+$ git branch --all
+  ReadMe
+* master
+  remotes/origin/master
+
+User@Dell-PC MINGW64 ~/Desktop/Done (master)
+$ git checkout ReadMe
+Switched to branch 'ReadMe'
+
+User@Dell-PC MINGW64 ~/Desktop/Done (ReadMe)
+$ git add README.md
+
+User@Dell-PC MINGW64 ~/Desktop/Done (ReadMe)
+$ git commit -m "added the README.md file"
+[ReadMe 551d9e9] added the README.md file
+ 1 file changed, 8 insertions(+)
+ create mode 100644 README.md
+
+User@Dell-PC MINGW64 ~/Desktop/Done (ReadMe)
+$ git checkout master
+Switched to branch 'master'
+Your branch is up to date with 'origin/master'.
+
+User@Dell-PC MINGW64 ~/Desktop/Done (master)
+$ git merge ReadMe
+Updating e147a22..551d9e9
+Fast-forward
+ README.md | 8 ++++++++
+ 1 file changed, 8 insertions(+)
+ create mode 100644 README.md
